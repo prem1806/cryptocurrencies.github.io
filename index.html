@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+	<title>Crypto currencies</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/angular.js"></script>
+	<script type="text/javascript" src="js/Chart.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row main">
+			<h3 class="text-center">In USD</h3>
+			<div class="col-md-6">
+				<div ng-controller="myctrl">					
+					<table class="table">
+						<tr>
+							<th>Name</th>
+							<th>Crypto currencies in USD</th>
+						</tr>
+						<tr ng-repeat="x in details">
+							<td ng-bind="x.name"></td>
+							<td ng-bind="x.price_usd | currency"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<canvas id="myChart" height="250"></canvas>
+			</div>
+		</div>
+		<dir class="row prem">
+			<div class="col-md-12">
+				<b><sup>&#10033;</sup>This data refresh every 5 minutes</b>
+			</div>
+		</dir>
+	</div>
+
+	<script type="text/javascript" src="js/myapp.js"></script>
+	<script type="text/javascript" src="js/myctrl.js"></script>
+</body>
+</html>
